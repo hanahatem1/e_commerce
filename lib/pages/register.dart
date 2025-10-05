@@ -79,7 +79,7 @@ class _RegisterPageState extends State<RegisterPage> {
                               }
                             } catch (e) {
                               ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(content: Text('there is an error')));
+                                  SnackBar(content: Text('there is an error here')));
                             }
                             isLoading=false;
                             setState(() {
