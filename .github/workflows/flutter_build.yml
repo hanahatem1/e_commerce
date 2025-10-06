@@ -9,6 +9,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Required for creating releases and tags
 
     steps:
       - name: Checkout code
@@ -40,5 +42,7 @@ jobs:
           draft: false
           prerelease: false
           files: build/app/outputs/flutter-apk/app-release.apk
+          make_latest: true
+          generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
